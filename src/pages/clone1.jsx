@@ -197,7 +197,7 @@ export default function Clone1() {
                     </div>
                     <div className="w-full h-full grid grid-cols-3">
                         <div className="w-full h-full col-span-2"><img className="w-full h-full" src={coventry} alt=""/></div>
-                        <div className="w-full h-full"><h1>hello</h1></div>
+                        <div className="w-full h-full"><h1>hello world</h1></div>
                     </div>
                 </div>
         </div>

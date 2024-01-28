@@ -4,6 +4,11 @@ import { gsap } from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import myphoto from '../images/myphoto.jpg'
 import coventry from '../videos/coventry.mp4'
+import mitaoe from '../videos/mitaoe.mp4'
+import cps from '../videos/cps.mp4'
+import super1 from '../videos/super1.mp4'
+import super2 from '../videos/super2.mp4'
+import minor from '../videos/minor.mp4'
 gsap.registerPlugin(ScrollTrigger);
 export default function Clone1() {
     const navigate = useNavigate();
@@ -21,7 +26,7 @@ export default function Clone1() {
                 end: '+='+document.querySelector(".contain").offsetWidth,
                 scrub: 1,
                 pin: true,
-                snap: 1/(sections.length-1),
+                // snap: 1/(sections.length-1),
                 markers: true
             }
         });
@@ -148,14 +153,14 @@ export default function Clone1() {
 
 
   useEffect(() => {
-      window.scroll(0,0);
+      window.scrollTo(0,0);
       animatecircle1();
     animatecircle2();
       mouseimage();
       scrollanime();
   }, []);
     return (
-        <div id="mainbody" className="text-white bg-black text-base font-normal w-full h-full whitespace-nowrap font-['PP', 'Helvetica', 'Arial', 'sans-serif']">
+        <div id="mainbody" className="whitespace-pre-line text-white bg-black text-base font-normal w-full h-full font-['PP', 'Helvetica', 'Arial', 'sans-serif']">
            <h className="absolute w-96 h-[500px] -z-2 user-select-none pointer-events-none transform translate-x-5 translate-y-5 opacity-0" style={{background: `url(${myphoto}) no-repeat 50% 50%`,backgroundSize: 'cover'}} ref={el => cursor = el}></h>
             <nav className="mynav w-full h-32 grid grid-cols-9 items-center z-[1] top-0 left-0 fixed">
                 <div id="abraham-ahmed" className="w-full h-full text-container col-span-2 flex items-center justify-center">
@@ -241,20 +246,158 @@ export default function Clone1() {
                             <div className="w-full h-full"><h1 className="tracking-widest text-2xl">WORK EXPERIENCE</h1></div>
                             <div className="w-full h-full row-span-3"><h1 className="text-3xl">Intern at<br/>Coventry University, England<br/>June-July 2023</h1></div>
                             <div className="w-full h-full row-span-2"><h1 className="text-xl">Tech Stack:<br/>.Net Framework, C# Script,<br/>Unity Engine, and AI</h1></div>
-                            <div className="w-full h-full row-span-2 flex items-end"><h1 className="text-lg">Implementation of<br/>A-star algorithm for<br/>NPC AI bot</h1></div>
+                            <div className="w-full h-full row-span-2 flex items-end"><h1 className="text-lg">Implementation of<br/>A* algorithm for<br/>NPC AI bot</h1></div>
                         </div>
                     </div>
                 </div>
         </div>
             <div className="scroll w-full h-full relative overflow-x-hidden">
                 <div className="contain w-[400vw] h-full flex">
-                    <div className="panel w-screen h-screen flex items-center justify-center"><h1 className="text-3xl">My life my rules</h1></div>
-                    <div className="panel w-screen h-screen flex items-center justify-center"><h1 className="text-3xl">Life</h1></div>
-                    <div className="panel w-screen h-screen flex items-center justify-center"><h1 className="text-3xl">My</h1></div>
-                    <div className="panel w-screen h-screen flex items-center justify-center"><h1 className="text-3xl">Roles</h1></div>
+                    <div className="panel w-screen h-screen">
+                 <div className="w-full h-full flex relative px-28 py-24">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-6">
+                        <div className="w-full h-full grid grid-rows-8 text-right">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
+                            <div className="w-full h-full row-span-2 items-center flex justify-end"><h1 className="text-3xl">Rakshak 2024</h1></div>
+                            <div className="w-full h-full row-span-5 flex items-end"><h1 className="text-xl">Tech Stack:<br/>Django Rest Framework, GeoDjango, Postgres, React, GSAP, Tailwind, Twilio, Razorpay</h1></div>
+                        </div>
+                        <div className="w-full h-full col-span-5">
+                            <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={super2} type="video/mp4" />
+                </video>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                    </div>
+                    <div className="panel w-screen h-screen">
+                        <div className="w-full h-full flex relative px-28 py-24">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-6">
+                        <div className="w-full h-full col-span-5">
+                            <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={super1} type="video/mp4" />
+                </video>
+                        </div>
+                        <div className="w-full h-full grid grid-rows-8">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
+                            <div className="w-full h-full row-span-2 items-center flex"><h1 className="text-3xl">Spark+ 2023</h1></div>
+                            <div className="w-full h-full row-span-5 flex items-end"><h1 className="text-xl">Tech Stack:<br/>Spring Boot Framework, MySQL, React, w3css, SMTP, various APIs</h1></div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+                    </div>
+                    <div className="panel w-screen h-screen">
+                            <div className="w-full h-full flex relative px-28 py-24">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-6">
+                        <div className="w-full h-full grid grid-rows-8 text-right">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">MINOR PROJECT</h1></div>
+                            <div className="w-full h-full row-span-2 items-center flex justify-end"><h1 className="text-3xl">MITA+ 2023</h1></div>
+                            <div className="w-full h-full row-span-5 flex items-end"><h1 className="text-xl">Tech Stack:<br/>Django, SQLite, Bootstrap, w3css, Pandas</h1></div>
+                        </div>
+                        <div className="w-full h-full col-span-5">
+                            <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={minor} type="video/mp4" />
+                </video>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                    </div>
+                    <div className="panel w-screen h-screen">
+                            <div className="w-full h-full flex relative px-28 py-24">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-6">
+                        <div className="w-full h-full grid grid-rows-8 text-right">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
+                            <div className="w-full h-full row-span-2 items-center flex justify-end"><h1 className="text-3xl">Rakshak 2023</h1></div>
+                            <div className="w-full h-full row-span-5 flex items-end"><h1 className="text-xl">Tech Stack:<br/>Django Rest Framework, GeoDjango, Postgres, React, GSAP, Tailwind, Twilio, Razorpay</h1></div>
+                        </div>
+                        <div className="w-full h-full col-span-5">
+                            <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={super2} type="video/mp4" />
+                </video>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                    </div>
             </div>
             </div>
-            <div className="w-full h-screen bg-blue-400 relative">Global warning</div>
+            <div className="w-full h-full flex relative px-64 py-52">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-3">
+                        <div className="w-full h-full grid grid-rows-8 text-right">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">B. TECH DEGREE</h1></div>
+                            <div className="w-full h-full flex justify-end row-span-3"><h1 className="text-3xl">In<br/>Computer<br/>Engineering</h1></div>
+                            <div className="w-full h-full"><h1 className="text-xl">At MIT Academy of Engineering, Pune 2021-2025</h1></div>
+                            <div className="w-full h-full row-span-3 flex items-end justify-end"><h1 className="text-lg">Member of Super 30<br/>CGPA:<br/>First Year: 9.2<br/>Second Year: 9.2<br/>Third Year: 9.2</h1></div>
+                        </div>
+                        <div className="w-full h-full col-span-2">
+                            <video
+                    className="w-[960px] h-[540px] object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={mitaoe} type="video/mp4" />
+                </video>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <div className="w-full h-full flex relative px-64 py-52">
+                <div className="gap-y-2 w-full h-full">
+                    <div className="w-full h-full gap-x-6 grid grid-cols-3">
+                        <div className="w-full h-full col-span-2">
+                            <video
+                    className="w-[960px] h-[540px] object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                >
+                    <source src={cps} type="video/mp4" />
+                </video>
+                        </div>
+                        <div className="w-full h-full grid grid-rows-8">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">HIGHER SECONDARY SCHOOL</h1></div>
+                            <div className="w-full h-full flex row-span-3 items-center"><h1 className="text-xl">At Dharampeth Science College with IIT-HOME, Nagpur<br/>2019-2021</h1></div>
+                            <div className="w-full h-full row-span-2"><h1 className="text-xl">At Centre Point School Wardhaman Nagar, Nagpur<br/>2009-2019</h1></div>
+                            <div className="w-full h-full row-span-2 flex items-end"><h1 className="text-lg">Test Scores:<br/>HSC: 93.33%<br/>AISSE: 83.33%</h1></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
     </div>
     );
 }

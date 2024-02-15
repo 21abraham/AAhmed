@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css';
-import Dashboard from "./pages/Dashboard";
-import Clone1 from "./pages/clone1";
+import LandingPage from "./pages/LandingPage";
 
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
         <div className="App">
             <Router>
                 <Routes>
-                    <Route path="/" element={<Clone1 />} />
+                    <Route path="/" element={<LandingPage />} />
                 </Routes>
             </Router>
         </div>

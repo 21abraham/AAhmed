@@ -3,8 +3,51 @@ import { Link } from 'react-router-dom';
 // import { PieChart, Pie, Cell } from 'recharts';
 // import photo from './../assests/photo.jpg';
 import { gsap } from 'gsap/all';
+import azure from "../images/azure.png";
+import oracle from "../images/oracle.png";
+import cisco1 from "../images/cisco.png";
+import cisco2 from "../images/cisco2.png";
+import cisco3 from "../images/cisco3.png";
+import cisco4 from "../images/cisco4.png";
+import awscloud from "../images/awscloud.png";
+import awsml from "../images/awsml.png";
+import django from "../images/django.png";
+import kali from "../images/kali.png";
 
 export default function Dashboard() {
+    const cards =()=>{
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.my3dcontain',
+                start: 'top top',
+                end: '+='+document.querySelector(".my3dcontain").offsetWidth,
+                scrub: 1,
+                pin: true,
+                // snap: 1/(sections.length-1),
+                markers: true
+            }
+        });
+     tl.to(".spincontainer", {
+      rotationY: '+=360',
+      duration: 10,
+      ease: "none",
+      repeat: -1,
+    });
+      tl.from(".spincontainer", {
+          opacity:1,
+          // x:-1000,
+      // duration: 5,
+      ease: "none",
+      repeat: -1,
+      stagger: {
+    each: 2,
+    from: 'start', // Start from the end of the array
+  },
+    },"start");
+            return () =>{
+         tl.revert();
+        }
+    }
  // useEffect(() => {
  //    // Animation
  //    const animation = gsap.from('.layer', { opacity: 0, duration: 2, y: 50 });
@@ -31,8 +74,8 @@ tl.from('.leftlayer', { opacity: 0, duration: 3, x: -100 });
             <div className="grid grid-cols-3 w-full h-20">
                 <div className="w-full h-full pl-8 flex items-center">
                     <Link>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
                         </svg>
                     </Link>
                 </div>
@@ -47,8 +90,8 @@ tl.from('.leftlayer', { opacity: 0, duration: 3, x: -100 });
                             className="bg-teal-400 duration-1000 hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-500/50 absolute right-1 top-1 h-10 rounded-full w-16 flex items-center justify-center"
                             type="submit"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                             </svg>
 
                         </button>
@@ -127,8 +170,8 @@ tl.from('.leftlayer', { opacity: 0, duration: 3, x: -100 });
                                     </div>
                             </div>
                             <div className="w-full h-full bg-transparent row-span-1 rounded-b-3xl flex justify-end">
-                                    <button type="submit" className="hover:shadow-lg hover:shadow-lime-500/50 hover:bg-lime-300 duration-1000 w-24 flex items-center justify-center h-18 rounded-br-3xl">Register<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                    <button type="submit" className="hover:shadow-lg hover:shadow-lime-500/50 hover:bg-lime-300 duration-1000 w-24 flex items-center justify-center h-18 rounded-br-3xl">Register<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                     </svg>
 </button>
                                 </div>
@@ -284,6 +327,40 @@ tl.from('.leftlayer', { opacity: 0, duration: 3, x: -100 });
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="w-full h-screen my3dcontain">
+             <div className="perspective-container relative w-full h-56" style={{ perspective: "1000px"}}>
+      <div className="spincontainer h-56 w-[500px] bg-red-950 absolute origin-right" style={{ transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={azure} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(10deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={oracle} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(20deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={cisco1} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(30deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={cisco2} alt="" />
+      </div>
+            <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(40deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={cisco3} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(50deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={cisco4} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(60deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={awscloud} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(70deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={awsml} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(80deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={django} alt="" />
+      </div>
+                 <div className="spincontainer h-56 w-[500px] absolute origin-right" style={{transform: 'rotateY(90deg)', transformStyle: "preserve-3d" }}>
+            <img className="image w-72 h-56 object-cover" src={kali} alt="" />
+      </div>
+    </div>
                 </div>
             </div>
             <div className="blob w-[800px] h-[800px] rounded-full absolute bottom-0 right-0 -z-10 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 blur-2xl bg-opacity-50"></div>

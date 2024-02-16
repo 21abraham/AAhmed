@@ -11,6 +11,7 @@ import super2 from '../videos/super2.mp4'
 import minor from '../videos/minor.mp4'
 import azure from '../images/azure.png'
 import oracle from '../images/oracle.png'
+import cisco from '../images/cisco.png'
 import cisco2 from '../images/cisco2.png'
 import cisco3 from '../images/cisco3.png'
 import cisco4 from '../images/cisco4.png'
@@ -20,6 +21,13 @@ import django from '../images/django.png'
 import resume from '../assets/AbrahamResume.pdf'
 gsap.registerPlugin(ScrollTrigger);
 export default function LandingPage() {
+    const style = {
+        background: 'linear-gradient(90deg,#fcfffd,#fcfffd,#fcfffd, #808080, #fcfffd, #fcfffd,#fcfffd,#fcfffd, #808080, #fcfffd, #fcfffd,#fcfffd,#fcfffd)',
+        backgroundSize: '400%',
+        WebkitTextFillColor: 'transparent',
+        WebkitBackgroundClip: 'text',
+        animation: 'animate 25s linear infinite'
+    };
     const [copiedEmail, setCopiedEmail] = useState(false);
     const [copiedNumber, setCopiedNumber] = useState(false);
   const emailAddress = 'abraham21aug@gmail.com';
@@ -206,7 +214,7 @@ const changenow = () => {
             scrollTrigger: {
                 trigger: '.cpscontain',
                 start: 'top top',
-                end: '+=1000',
+                end: '+='+document.querySelector(".cpscontain").offsetWidth,
                 scrub: 1,
             }
         });
@@ -270,11 +278,24 @@ const changenow = () => {
         <div id="mainbody" className="overflow-hidden whitespace-pre-line text-white bg-black text-base font-normal w-full h-full font-['PP', 'Helvetica', 'Arial', 'sans-serif']">
            <h className="max-md:scale-50 max-md:-translate-x-20 max-md:-translate-y-20 absolute w-96 h-[500px] -z-2 user-select-none pointer-events-none transform translate-x-5 translate-y-5 rounded-3xl opacity-0" style={{background: `url(${myphoto}) no-repeat 50% 50%`,backgroundSize: 'cover'}} ref={el => cursor = el}></h>
             <nav className="mynav max-md:scale-75 w-full h-32 grid grid-cols-9 items-center z-[10] top-0 left-0 fixed">
-                <div id="abraham-ahmed" className="w-full h-full text-container col-span-2 flex items-center justify-center">
-                  <h1 className="leading-6">I'm Abraham Ahmed</h1>
+                <div id="abraham-ahmed" className="max-md:hidden w-full h-full text-container col-span-2 flex items-center justify-center">
+                    <h1 style={style}>I'm Abraham Ahmed</h1>
+                    <style>
+                            {`
+          @keyframes animate {
+            0% {
+              background-position: 400%;
+            }
+            100% {
+              background-position: 0%;
+            }
+          }
+        `}
+                        </style>
                 </div>
 
-                <div className="w-full h-full col-span-4"></div>
+                <div className="w-full h-full col-span-4">
+                </div>
                 <div className="hidden lg:flex lg:gap-x-12 justify-center col-span-3 items-center">
                         {navigation.map((item) => (
                             <button
@@ -297,7 +318,7 @@ const changenow = () => {
                     </div>
 
             </nav>
-           <div id="hero" className="w-full h-screen px-4 py-4">
+           <div id="hero" className="w-full h-screen max-md:h-96 px-4 py-4">
         <div className="w-full h-full rounded-3xl relative overflow-hidden">
           <div id="circle1" className="blob w-[700px] h-[700px] -z-1 rounded-full absolute top-0 right-0 bg-gradient-to-br from-transparent via-[#666da5] to-transparent blur-3xl bg-opacity-80"></div>
           <div id={"circle2"} className="blob w-[700px] h-[700px] -z-1 rounded-full absolute bottom-0 left-0 bg-gradient-to-tl from-transparent via-[#cd506f] to-transparent blur-3xl opacity-80"></div>
@@ -359,11 +380,35 @@ const changenow = () => {
         </div>
 
       </div>
-            <div className="w-full h-full flex relative px-64 py-52 max-md:px-0 max-md:py-52">
+            <div className="lg:hidden w-full h-full grid grid-rows-4">
+                <div className="row-span-3 w-full h-full flex items-center justify-center">
+                <div className="w-44 h-44 rounded-full bg-no-repeat" style={{background: `url(${myphoto})`,backgroundSize: 'cover'}}></div>
+            </div>
+                <div className="h-full w-full grid grid-rows-2">
+                    <div className="h-full w-full flex items-center justify-center"><h1 style={style}>I'm Abraham Ahmed<br/></h1>
+                    <style>
+                            {`
+          @keyframes animate {
+            0% {
+              background-position: 400%;
+            }
+            100% {
+              background-position: 0%;
+            }
+          }
+        `}
+                        </style></div>
+                    <div className="h-full w-full flex items-center justify-center">Use desktop for better experience<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 ml-2">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+</svg>
+</div>
+                </div>
+            </div>
+            <div className="w-full h-full flex relative lg:px-64 lg:py-52 max-md:px-4 max-md:py-32">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid grid-cols-3">
-                        <div className="w-full h-full col-span-2 max-md:flex max-md:items-center"><video
-                    className="w-[960px] h-[540px] object-cover max-md:w-[480px] max-md:h-[270px]"
+                    <div className="w-full h-full lg:gap-x-6 max-md:gap-y-2 grid lg:grid-cols-3 max-md:grid-rows-2">
+                        <div className="w-full h-full lg:col-span-2"><video
+                    className="max-md:rounded-t-3xl w-[960px] h-[540px] object-cover max-md:w-full max-md:h-[270px]"
                     autoPlay
                     loop
                     muted
@@ -371,11 +416,11 @@ const changenow = () => {
                 >
                     <source src={coventry} type="video/mp4" />
                 </video></div>
-                        <div className="w-full h-full grid grid-rows-8">
-                            <div className="w-full h-full"><h1 className="max-md:text-sm tracking-widest text-2xl">WORK EXPERIENCE</h1></div>
-                            <div className="w-full h-full row-span-3"><h1 className="max-md:text-sm text-3xl">Intern at<br/>Coventry University, England<br/>June-July 2023</h1></div>
-                            <div className="w-full h-full row-span-2"><h1 className="max-md:text-sm text-xl">Tech Stack:<br/>.Net Framework, C# Script,<br/>Unity Engine, and AI</h1></div>
-                            <div className="w-full h-full row-span-2 flex items-end"><h1 className="max-md:text-sm text-lg">Implementation of<br/>A* algorithm for<br/>NPC AI bot</h1></div>
+                        <div className="w-full h-full grid lg:grid-rows-8 max-md:grid-rows-5 max-md:text-center">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">WORK EXPERIENCE</h1></div>
+                            <div className="w-full h-full max-md:row-span-2 lg:row-span-3"><h1 className="text-3xl">Intern at Coventry University, England June-July 2023</h1></div>
+                            <div className="w-full h-full lg:row-span-2"><h1 className="text-xl">Tech Stack:<br/>.Net Framework, C# Script, Unity Engine, and AI</h1></div>
+                            <div className="w-full h-full lg:row-span-2 lg:flex lg:items-end"><h1 className="text-lg">Implementation of A* algorithm for NPC AI bot</h1></div>
                         </div>
                     </div>
                 </div>
@@ -383,17 +428,17 @@ const changenow = () => {
             <div className="scroll w-full h-full relative overflow-x-hidden">
                 <div className="contain w-[400vw] h-full flex">
                     <div className="panel w-screen h-screen">
-                 <div className="w-full h-full flex relative px-28 py-24 max-md:px-2 max-md:py-2">
+                 <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:grid-rows-6">
-                        <div className="w-full h-full grid lg:grid-rows-8 text-right max-md:grid-cols-8 max-md:row-span-2">
-                            <div className="w-full h-full max-md:col-span-2 max-md:text-left max-md:flex max-md:items-center"><h1 className="tracking-widest text-2xl max-md:text-sm">SUPER 30 PROJECT</h1></div>
-                            <div className="w-full h-full max-md:col-span-2 lg:row-span-2 lg:items-center flex lg:justify-end max-md:flex max-md:items-center"><h1 className="text-3xl max-md:text-sm">Rakshak 2024</h1></div>
-                            <div className="w-full h-full max-md:col-span-4 lg:row-span-5 flex lg:items-end max-md:items-center max-md:text-right"><h1 className="text-xl max-md:text-sm">Tech Stack:<br/>Django Rest Framework, GeoDjango, Postgres, React, GSAP, Tailwind, Twilio, Razorpay</h1></div>
+                    <div className="w-full h-full lg:gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
+                        <div className="w-full h-full grid lg:grid-rows-8 lg:text-right max-md:grid-rows-3 max-md:text-center">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
+                            <div className="w-full h-full lg:row-span-2 lg:items-center lg:flex lg:justify-end"><h1 className="text-3xl">Rakshak 2024</h1></div>
+                            <div className="w-full h-full lg:row-span-5 lg:flex lg:items-end"><h1 className="text-xl">Tech Stack:<br/>Django Rest Framework, GeoDjango, Postgres, React, GSAP, Tailwind, Twilio, Razorpay</h1></div>
                         </div>
-                        <div className="w-full h-full lg:col-span-5 max-md:row-span-4 max-md:flex max-md:justify-center max-md:items-center">
+                        <div className="w-full h-full lg:col-span-5">
                             <video
-                    className="w-full h-full object-cover max-md:w-[400px] max-md:h-52"
+                    className="w-full h-full object-cover max-md:w-full max-md:max-md:h-[270px] max-md:"
                     autoPlay
                     loop
                     muted
@@ -407,12 +452,12 @@ const changenow = () => {
         </div>
                     </div>
                     <div className="panel w-screen h-screen">
-                        <div className="w-full h-full flex relative px-28 py-24 max-md:px-2 max-md:py-2">
+                        <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:grid-rows-6">
-                        <div className="w-full h-full lg:col-span-5 max-md:row-span-4 max-md:flex max-md:justify-center max-md:items-center">
+                    <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
+                        <div className="w-full h-full lg:col-span-5">
                             <video
-                    className="w-full h-full object-cover max-md:w-[400px] max-md:h-52"
+                    className="w-full h-full object-cover max-md:w-full max-md:h-[270px]"
                     autoPlay
                     loop
                     muted
@@ -421,10 +466,10 @@ const changenow = () => {
                     <source src={super1} type="video/mp4" />
                 </video>
                         </div>
-                        <div className="w-full h-full grid lg:grid-rows-8 text-right max-md:grid-cols-8 max-md:row-span-2">
-                            <div className="w-full h-full max-md:col-span-2 max-md:text-left max-md:flex max-md:items-center"><h1 className="tracking-widest text-2xl max-md:text-sm">SUPER 30 PROJECT</h1></div>
-                            <div className="w-full h-full max-md:col-span-2 lg:row-span-2 lg:items-center flex lg:justify-end max-md:flex max-md:items-center"><h1 className="text-3xl max-md:text-sm">Spark+ 2023</h1></div>
-                            <div className="w-full h-full max-md:col-span-4 lg:row-span-5 flex lg:items-end max-md:items-center max-md:text-right"><h1 className="text-xl max-md:text-sm">Tech Stack:<br/>Spring Boot Framework, MySQL, React, w3css, SMTP, various APIs</h1></div>
+                        <div className="w-full h-full grid lg:grid-rows-8 lg:text-left max-md:grid-rows-3 max-md:text-center">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
+                            <div className="w-full h-full lg:row-span-2 lg:items-center lg:flex"><h1 className="text-3xl">Spark+ 2023</h1></div>
+                            <div className="w-full h-full lg:row-span-5 flex lg:items-end"><h1 className="text-xl">Tech Stack:<br/>Spring Boot Framework, MySQL, React, w3css, SMTP, various APIs</h1></div>
                         </div>
 
                     </div>
@@ -432,17 +477,17 @@ const changenow = () => {
         </div>
                     </div>
                     <div className="panel w-screen h-screen">
-                            <div className="w-full h-full flex relative px-28 py-24 max-md:px-2 max-md:py-2">
+                        <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:grid-rows-6">
-                        <div className="w-full h-full grid lg:grid-rows-8 text-right max-md:grid-cols-8 max-md:row-span-2">
-                            <div className="w-full h-full max-md:col-span-2 max-md:text-left max-md:flex max-md:items-center"><h1 className="tracking-widest text-2xl max-md:text-sm">MINOR PROJECT</h1></div>
-                            <div className="w-full h-full max-md:col-span-2 lg:row-span-2 lg:items-center flex lg:justify-end max-md:flex max-md:items-center"><h1 className="text-3xl max-md:text-sm">MITA+ 2023</h1></div>
-                            <div className="w-full h-full max-md:col-span-4 lg:row-span-5 flex lg:items-end max-md:items-center max-md:text-right"><h1 className="text-xl max-md:text-sm">Tech Stack:<br/>Django, SQLite, Bootstrap, w3css, Pandas</h1></div>
+                    <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
+                        <div className="w-full h-full grid lg:grid-rows-8 lg:text-right max-md:grid-rows-3 max-md:text-center">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">MINOR PROJECT</h1></div>
+                            <div className="w-full h-full lg:row-span-2 lg:items-center lg:flex lg:justify-end"><h1 className="text-3xl">MITA+ 2023</h1></div>
+                            <div className="w-full h-full lg:row-span-5 lg:flex lg:items-end"><h1 className="text-xl">Tech Stack:<br/>Django, SQLite, Bootstrap, w3css, Pandas</h1></div>
                         </div>
-                        <div className="w-full h-full lg:col-span-5 max-md:row-span-4 max-md:flex max-md:justify-center max-md:items-center">
+                        <div className="w-full h-full lg:col-span-5">
                             <video
-                    className="w-full h-full object-cover max-md:w-[400px] max-md:h-52"
+                    className="w-full h-full object-cover max-md:w-full max-md:h-[270px] max-md:rounded-br-3xl"
                     autoPlay
                     loop
                     muted
@@ -457,18 +502,18 @@ const changenow = () => {
                     </div>
             </div>
             </div>
-            <div id='about' className="w-full h-full flex relative px-64 py-52 max-md:px-0 max-md:py-52">
+            <div id='about' className="w-full h-full flex relative lg:px-64 lg:py-52 max-md:px-4 max-md:pt-32">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid grid-cols-3">
-                        <div className="w-full h-full grid grid-rows-8 max-md:grid-rows-4 text-right max-md:h-80">
-                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl max-md:text-sm">B. TECH DEGREE</h1></div>
-                            <div className="w-full h-full flex justify-end row-span-3 max-md:row-span-1"><h1 className="text-3xl max-md:text-sm">In<br/>Computer<br/>Engineering</h1></div>
-                            <div className="w-full h-full"><h1 className="text-xl max-md:text-sm">At MIT Academy of Engineering, Pune 2021-2025</h1></div>
-                            <div className="w-full h-full row-span-3 flex items-end justify-end max-md:row-span-1"><h1 className="text-lg max-md:text-sm">Member of Super 30<br/>CGPA:<br/>First Year: 9.2<br/>Second Year: 9.2<br/>Third Year: 9.2</h1></div>
+                    <div className="w-full h-full lg:gap-x-6 max-md:gap-y-2 grid lg:grid-cols-3 max-md:grid-rows-2">
+                        <div className="w-full h-full grid lg:grid-rows-8 max-md:grid-rows-4 max-md:text-center lg:text-right">
+                            <div className="w-full h-full max-md:flex max-md:items-end max-md:justify-center"><h1 className="tracking-widest text-2xl">B. TECH DEGREE</h1></div>
+                            <div className="w-full h-full lg:row-span-3 max-md:flex max-md:items-end max-md:justify-center"><h1 className="text-3xl">In Computer Engineering</h1></div>
+                            <div className="w-full h-full max-md:flex max-md:items-center max-md:justify-center"><h1 className="text-xl max-md:text-sm">At MIT Academy of Engineering, Pune 2021-2025</h1></div>
+                            <div className="w-full h-full lg:row-span-3 lg:flex lg:items-end lg:justify-end"><h1 className="text-lg">Member of Super 30<br/>CGPA:<br/>First Year: 9.2<br/>Second Year: 9.2<br/>Third Year: 9.2</h1></div>
                         </div>
-                        <div className="w-full h-full col-span-2 max-md:flex max-md:items-center">
+                        <div className="w-full h-full lg:col-span-2">
                             <video
-                    className="w-[960px] h-[540px] object-cover max-md:w-[480px] max-md:h-[270px]"
+                    className="w-[960px] h-[540px] object-cover max-md:w-full max-md:h-[270px] max-md:rounded-b-3xl"
                     autoPlay
                     loop
                     muted
@@ -480,30 +525,64 @@ const changenow = () => {
                     </div>
                 </div>
         </div>
-            <div className="w-full h-full flex relative px-64 py-52 max-md:px-0 max-md:py-52 cpscontain">
+            <div className="cpscontain w-full h-full flex relative lg:px-64 lg:py-52 max-md:px-4 max-md:pt-32">
                 <div className="gap-y-2 w-full h-full">
-                    <div className="w-full h-full gap-x-6 grid grid-cols-3">
-                        <div className="w-full h-full col-span-2 max-md:flex max-md:items-center">
-                            <video
-                    className="w-[960px] h-[540px] object-cover max-md:w-[480px] max-md:h-[270px]"
+                    <div className="w-full h-full lg:gap-x-6 max-md:gap-y-2 grid lg:grid-cols-3 max-md:grid-rows-3">
+                        <div className="w-full h-full lg:col-span-2"><video
+                    className="w-[960px] h-[540px] object-cover max-md:w-full max-md:h-[270px] max-md:rounded-t-3xl"
                     autoPlay
                     loop
                     muted
                     playsInline
                 >
                     <source src={cps} type="video/mp4" />
-                </video>
-                        </div>
-                        <div className="w-full h-full grid grid-rows-8 max-md:grid-rows-4">
-                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl max-md:text-sm">HIGHER SECONDARY SCHOOL</h1></div>
-                            <div className="w-full h-full flex row-span-3 items-center max-md:row-span-1"><h1 className="text-xl max-md:text-sm">At Dharampeth Science College with IIT-HOME, Nagpur<br/>2019-2021</h1></div>
-                            <div className="w-full h-full row-span-2 max-md:row-span-1"><h1 className="text-xl max-md:text-sm">At Centre Point School Wardhaman Nagar, Nagpur<br/>2009-2019</h1></div>
-                            <div className="w-full h-full row-span-2 flex items-end max-md:row-span-1"><h1 className="text-lg max-md:text-sm">Test Scores:<br/>HSC: 93.33%<br/>AISSE: 83.33%</h1></div>
+                </video></div>
+                        <div className="w-full h-full max-md:row-span-2 grid lg:grid-rows-8 max-md:grid-rows-5 max-md:text-center">
+                            <div className="w-full h-full"><h1 className="tracking-widest text-2xl">HIGHER SECONDARY SCHOOL</h1></div>
+                            <div className="w-full h-full lg:row-span-3"><h1 className="text-3xl">At Dharampeth Science College with IIT-HOME, Nagpur 2019-2021</h1></div>
+                            <div className="w-full h-full lg:row-span-2"><h1 className="text-xl">At Centre Point School Wardhaman Nagar, Nagpur 2009-2019</h1></div>
+                            <div className="w-full h-full lg:row-span-2 lg:flex lg:items-end"><h1 className="text-lg">Test Scores:<br/>HSC: 93.33%<br/>AISSE: 83.33%</h1></div>
                         </div>
                     </div>
                 </div>
         </div>
-            <div id='achieve' className="max-md:scale-50 w-full h-[1000px] max-md:h-[1200px] flex relative" onMouseMove={(e) => {manageMouseMove(e)}}>
+            <h1 className="w-full flex justify-center text-3xl tracking-widest">Achievements</h1>
+            <div className="lg:hidden py-12 w-full h-full grid grid-rows-3 gap-2">
+                            <div className="w-full h-full grid grid-cols-3">
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={cisco2} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={awscloud} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={cisco3} alt=""/>
+                                </div>
+                            </div>
+                            <div className="w-full h-full grid grid-cols-3">
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={django} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={azure} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={oracle} alt=""/>
+                                </div>
+                            </div>
+                            <div className="w-full h-full grid grid-cols-3">
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={cisco4} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={awsml} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={cisco} alt=""/>
+                                </div>
+                            </div>
+                        </div>
+            <div id='achieve' className="max-md:hidden w-full h-[1000px] max-md:h-[1200px] flex relative z-[2] overflow-hidden" onMouseMove={(e) => {manageMouseMove(e)}}>
                 <div ref={plane1} className="w-full h-full absolute z-[2]">
                     <div className="w-full h-full relative">
                         <img className="w-72 h-52 absolute bottom-48 left-12 rounded-3xl max-md:bottom-96 max-md:-left-60" src={azure} alt=""/>
@@ -514,7 +593,7 @@ const changenow = () => {
                 </div>
                 <div ref={plane2} className="w-full h-full absolute z-[1]">
                     <div className="w-full h-full relative">
-                    <img className="w-72 h-52 absolute bottom-32 right-96 rounded-3xl" src={cisco3} alt=""/>
+                    <img className="w-72 h-52 absolute bottom-32 right-96 rounded-3xl" src={cisco} alt=""/>
                     <img className="w-72 h-52 absolute bottom-32 left-96 rounded-3xl" src={cisco4} alt=""/>
                         <img className="w-72 h-52 absolute top-24 right-96 rounded-3xl" src={cisco3} alt=""/>
                     <img className="w-72 h-52 absolute top-24 left-96 rounded-3xl" src={cisco2} alt=""/>
@@ -525,6 +604,29 @@ const changenow = () => {
                         <img className="w-72 h-52 absolute top-96 right-[600px] max-md:right-28 max-md:top-[500px] rounded-3xl" src={django} alt=""/>
                     </div>
                 </div>
+            </div>
+            <div className="lg:mt-20 flex justify-center items-center w-full h-12 bg-purple-900">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2 animate-pulse">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+</svg>
+
+                <h1 style={style} className="italic font-serif">I had strings, but now I'm free. There are no strings on me.</h1>
+            <style>
+                            {`
+          @keyframes animate {
+            0% {
+              background-position: 400%;
+            }
+            100% {
+              background-position: 0%;
+            }
+          }
+        `}
+                        </style>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 ml-2 animate-bounce">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+</svg>
+
             </div>
     </div>
     );

@@ -73,8 +73,7 @@ export default function LandingPage() {
                 end: '+='+document.querySelector(".contain").offsetWidth,
                 scrub: 1,
                 pin: true,
-                // snap: 1/(sections.length-1),
-                markers: true
+                markers: false
             }
         });
             tl.to(sections, { xPercent: -100*(sections.length-1), ease: 'none' },'start');
@@ -102,13 +101,13 @@ export default function LandingPage() {
    const handleHover = () => {
     toggleHover(true);
     gsap.to(cursor, { opacity: 1 });
-    revealTimeline.play(); // Play the timeline when mouse enters
+    revealTimeline.play();
   };
 
   const handleHoverOut = () => {
     toggleHover(false);
     gsap.to(cursor, { opacity: 0 });
-    revealTimeline.pause(); // Pause the timeline when mouse leaves
+    revealTimeline.pause();
   };
 
   revealTimeline.to({}, 0.016, {
@@ -207,7 +206,6 @@ const changenow = () => {
             scrollTrigger: {
                 trigger: '.cpscontain',
                 start: 'top top',
-                // end: '+='+document.querySelector(".cpscontain").offsetWidthetWidth,
                 end: '+=1000',
                 scrub: 1,
             }
@@ -508,23 +506,23 @@ const changenow = () => {
             <div id='achieve' className="max-md:scale-50 w-full h-[1000px] max-md:h-[1200px] flex relative" onMouseMove={(e) => {manageMouseMove(e)}}>
                 <div ref={plane1} className="w-full h-full absolute z-[2]">
                     <div className="w-full h-full relative">
-                        <img className="w-72 h-52 absolute bottom-48 max-md:bottom-0 left-12 rounded-3xl" src={azure} alt=""/>
-                    <img className="w-72 h-52 absolute bottom-44 max-md:bottom-96 right-12 rounded-3xl" src={oracle} alt=""/>
-                    <img className="w-72 h-52 absolute top-5 left-12 max-md:top-96 max-md:right-20 rounded-3xl" src={awsml} alt=""/>
+                        <img className="w-72 h-52 absolute bottom-48 left-12 rounded-3xl max-md:bottom-96 max-md:-left-60" src={azure} alt=""/>
+                    <img className="w-72 h-52 absolute bottom-44 right-12 rounded-3xl max-md:bottom-96 max-md:-right-60" src={oracle} alt=""/>
+                    <img className="w-72 h-52 absolute top-5 left-12 rounded-3xl max-md:top-96 max-md:-left-60" src={awsml} alt=""/>
+                        <img className="w-72 h-52 absolute top-5 right-12 rounded-3xl max-md:top-96 max-md:-right-60" src={awscloud} alt=""/>
                     </div>
                 </div>
                 <div ref={plane2} className="w-full h-full absolute z-[1]">
                     <div className="w-full h-full relative">
-                        <img className="w-72 h-52 absolute top-5 max-md:top-0 max-md:left-20 right-12 rounded-3xl" src={awscloud} alt=""/>
-                    <img className="w-72 h-52 absolute bottom-44 right-96 rounded-3xl" src={cisco3} alt=""/>
+                    <img className="w-72 h-52 absolute bottom-32 right-96 rounded-3xl" src={cisco3} alt=""/>
                     <img className="w-72 h-52 absolute bottom-32 left-96 rounded-3xl" src={cisco4} alt=""/>
+                        <img className="w-72 h-52 absolute top-24 right-96 rounded-3xl" src={cisco3} alt=""/>
+                    <img className="w-72 h-52 absolute top-24 left-96 rounded-3xl" src={cisco2} alt=""/>
                     </div>
                 </div>
                 <div ref={plane3} className="w-full h-full absolute">
                     <div className="w-full h-full relative">
-                        <img className="w-72 h-52 absolute top-96 right-[1000px] rounded-3xl" src={django} alt=""/>
-                    <img className="w-72 h-52 absolute top-52 right-96 rounded-3xl" src={cisco3} alt=""/>
-                    <img className="w-72 h-52 absolute top-24 left-96 rounded-3xl" src={cisco2} alt=""/>
+                        <img className="w-72 h-52 absolute top-96 right-[600px] max-md:right-28 max-md:top-[500px] rounded-3xl" src={django} alt=""/>
                     </div>
                 </div>
             </div>

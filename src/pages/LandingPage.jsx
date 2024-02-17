@@ -426,8 +426,8 @@ const changenow = () => {
                 </div>
         </div>
             <div className="scroll w-full h-full relative overflow-x-hidden">
-                <div className="contain w-[400vw] h-full flex">
-                    <div className="panel w-screen h-screen">
+                <div className="contain lg:w-[400vw] max-md:w-[4000px] h-full flex">
+                    <div className="panel lg:w-screen max-md:w-[1000px] h-screen">
                  <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
                     <div className="w-full h-full lg:gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
@@ -438,7 +438,7 @@ const changenow = () => {
                         </div>
                         <div className="w-full h-full lg:col-span-5">
                             <video
-                    className="w-full h-full object-cover max-md:w-full max-md:max-md:h-[270px] max-md:"
+                    className="w-full h-full object-cover max-md:w-full max-md:max-md:h-[270px] max-md:rounded-bl-3xl"
                     autoPlay
                     loop
                     muted
@@ -451,7 +451,7 @@ const changenow = () => {
                 </div>
         </div>
                     </div>
-                    <div className="panel w-screen h-screen">
+                    <div className="panel lg:w-screen max-md:w-[1000px] h-screen">
                         <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
                     <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
@@ -469,14 +469,14 @@ const changenow = () => {
                         <div className="w-full h-full grid lg:grid-rows-8 lg:text-left max-md:grid-rows-3 max-md:text-center">
                             <div className="w-full h-full"><h1 className="tracking-widest text-2xl">SUPER 30 PROJECT</h1></div>
                             <div className="w-full h-full lg:row-span-2 lg:items-center lg:flex"><h1 className="text-3xl">Spark+ 2023</h1></div>
-                            <div className="w-full h-full lg:row-span-5 flex lg:items-end"><h1 className="text-xl">Tech Stack:<br/>Spring Boot Framework, MySQL, React, w3css, SMTP, various APIs</h1></div>
+                            <div className="w-full h-full lg:row-span-5 lg:flex lg:items-end"><h1 className="text-xl">Tech Stack:<br/>Spring Boot Framework, MySQL, React, w3css, SMTP, various APIs</h1></div>
                         </div>
 
                     </div>
                 </div>
         </div>
                     </div>
-                    <div className="panel w-screen h-screen">
+                    <div className="panel lg:w-screen max-md:w-[1000px] h-screen">
                         <div className="w-full h-full flex relative lg:px-28 lg:py-24 max-md:px-4 max-md:pb-16">
                 <div className="gap-y-2 w-full h-full">
                     <div className="w-full h-full gap-x-6 grid lg:grid-cols-6 max-md:gap-y-2 max-md:grid-rows-2">
@@ -500,6 +500,13 @@ const changenow = () => {
                 </div>
         </div>
                     </div>
+                    <div className="panel lg:w-screen max-md:w-[1000px] h-screen flex lg:justify-center max-md:mt-4 items-center lg:text-3xl max-md:text-lg tracking-widest">
+                        <h1>Major project on LLM under development</h1>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12 ml-4 text-gray-500">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+</svg>
+
+            </div>
             </div>
             </div>
             <div id='about' className="w-full h-full flex relative lg:px-64 lg:py-52 max-md:px-4 max-md:pt-32">
@@ -548,37 +555,37 @@ const changenow = () => {
         </div>
             <h1 className="w-full flex justify-center text-3xl tracking-widest">Achievements</h1>
             <div className="lg:hidden py-12 w-full h-full grid grid-rows-3 gap-2">
-                            <div className="w-full h-full grid grid-cols-3">
+                            <div className="w-full h-full grid grid-cols-3 gap-2">
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={cisco2} alt=""/>
+                                    <img className="h-32" src={cisco2} alt=""/>
                                 </div>
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={awscloud} alt=""/>
+                                    <img className="h-32" src={awscloud} alt=""/>
                                 </div>
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={cisco3} alt=""/>
-                                </div>
-                            </div>
-                            <div className="w-full h-full grid grid-cols-3">
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <img src={django} alt=""/>
-                                </div>
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <img src={azure} alt=""/>
-                                </div>
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <img src={oracle} alt=""/>
+                                    <img className="h-32" src={cisco3} alt=""/>
                                 </div>
                             </div>
-                            <div className="w-full h-full grid grid-cols-3">
+                            <div className="w-full h-full grid grid-cols-3 gap-2">
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={cisco4} alt=""/>
+                                    <img className="h-32" src={django} alt=""/>
                                 </div>
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={awsml} alt=""/>
+                                    <img className="h-32" src={azure} alt=""/>
                                 </div>
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={cisco} alt=""/>
+                                    <img className="h-32" src={oracle} alt=""/>
+                                </div>
+                            </div>
+                            <div className="w-full h-full grid grid-cols-3 gap-2">
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img className="h-32" src={cisco4} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img className="h-32" src={awsml} alt=""/>
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img className="h-32" src={cisco} alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -605,7 +612,7 @@ const changenow = () => {
                     </div>
                 </div>
             </div>
-            <div className="bottom-0 lg:mt-20 flex justify-center items-center w-full h-12 bg-purple-900">
+            <div className="bottom-0 lg:mt-20 flex justify-center items-center w-full h-12 bg-purple-900 px-2 py-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2 animate-pulse">
   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
 </svg>

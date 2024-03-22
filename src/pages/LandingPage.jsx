@@ -320,8 +320,8 @@ const changenow = () => {
             </nav>
            <div id="hero" className="w-full h-screen max-md:h-96 px-4 py-4">
         <div className="w-full h-full rounded-3xl relative overflow-hidden">
-          <div id="circle1" className="blob w-[700px] h-[700px] -z-1 rounded-full absolute top-0 right-0 bg-gradient-to-br from-transparent via-[#666da5] to-transparent blur-3xl bg-opacity-80"></div>
-          <div id={"circle2"} className="blob w-[700px] h-[700px] -z-1 rounded-full absolute bottom-0 left-0 bg-gradient-to-tl from-transparent via-[#cd506f] to-transparent blur-3xl opacity-80"></div>
+          <div id="circle1" className="blob lg:w-1/2 h-full max-md:w-9/12 -z-1 rounded-full absolute top-0 right-0 bg-gradient-to-br from-transparent via-[#666da5] to-transparent blur-3xl bg-opacity-80"></div>
+          <div id="circle2" className="blob lg:w-1/2 h-full max-md:w-9/12 -z-1 rounded-full absolute bottom-0 left-0 bg-gradient-to-tl from-transparent via-[#cd506f] to-transparent blur-3xl opacity-80"></div>
           <h1 className="w-full h-full flex items-center justify-center text-3xl max-md:scale-75">Code architect and design alchemist, I shape ideas into responsive, dynamic, and elegant web solutions.</h1>
             <div className="w-72 h-12 absolute right-0 bottom-0">
                 <div className="w-full h-full grid grid-cols-6 items-center justify-center">
